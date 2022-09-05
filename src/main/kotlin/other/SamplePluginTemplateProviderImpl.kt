@@ -10,5 +10,8 @@ class SamplePluginTemplateProviderImpl : WizardTemplateProvider() {
     // activity的模板
     mvvmActivityTemplate,
     // fragment的模板
+
+
+
   )
 }
