@@ -1,5 +1,6 @@
 package other.activity
 
+import com.android.tools.idea.npw.module.recipes.generateManifest
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
 
@@ -9,19 +10,20 @@ fun RecipeExecutor.baseActivityRecipe(
   layoutName: String,
   packageName: String
 ) {
-  val (projectData, srcOut, resOut) = moduleData
+  val (projectData, srcOut, resOut,manifestDir) = moduleData
   val ktOrJavaExt = projectData.language.extension
-//    generateManifest(
-//            moduleData = moduleData,
-//            activityClass = "${activityClass}Activity",
-//            activityTitle = activityClass,
-//            packageName = packageName,
-//            isLauncher = false,
-//            hasNoActionBar = false,
-//            generateActivityTitle = true,
-//            requireTheme = false,
-//            useMaterial2 = false
-//    )
+/*    generateManifest(
+            moduleData = moduleData,
+            activityClass = "${activityClass}Activity",
+            activityTitle = activityClass,
+            packageName = packageName,
+            isLauncher = false,
+            hasNoActionBar = false,
+            generateActivityTitle = true,
+            requireTheme = false,
+            useMaterial2 = false
+    )*/
+  mergeXml(manifestTemplateXml(packageName, activityClass), manifestDir.resolve("AndroidManifest.xml"))
 
   val baseActivity =
     baseActivity(projectData.applicationPackage, activityClass, layoutName, packageName)
