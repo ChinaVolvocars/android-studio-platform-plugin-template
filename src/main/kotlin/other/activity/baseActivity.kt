@@ -20,7 +20,7 @@ class ${activityClass}Activity : BaseActivity() {
   }
   
   override fun initViewsAndEvents(savedInstanceState: Bundle?) {
-    title = ${layoutName}
+    title = "${layoutName}"
   }
 
 }

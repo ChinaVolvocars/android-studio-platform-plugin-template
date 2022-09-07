@@ -1,16 +1,14 @@
-package other.mvvm.activity
+package other.activity
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
+import other.mvvm.activity.mvvmActivityRecipe
 
-
-val mvvmActivityTemplate
+val baseActivityTemplate
   get() = template {
-//    revision = 1
-    name = "MVVM Activity"
-    description = "适用于BigaDemoMVVM框架的Activity"
+    name = "BaseActivity"
+    description = "适用于BaseActivity框架的Activity"
     minApi = MIN_API
-//    minBuildApi = MIN_API
 
     category = Category.Other
     formFactor = FormFactor.Mobile
@@ -47,7 +45,7 @@ val mvvmActivityTemplate
     )
 //        thumb { File("logo.png") }
     recipe = { data: TemplateData ->
-      mvvmActivityRecipe(
+      baseActivityRecipe(
         data as ModuleTemplateData,
         activityClass.value,
         layoutName.value,
@@ -61,7 +59,7 @@ val defaultPackageNameParameter
   get() = stringParameter {
     name = "Package name"
     visible = { !isNewModule }
-    default = "com.mycompany.myapp"
+    default = "com.dev996"
     constraints = listOf(Constraint.PACKAGE)
     suggest = { packageName }
   }
