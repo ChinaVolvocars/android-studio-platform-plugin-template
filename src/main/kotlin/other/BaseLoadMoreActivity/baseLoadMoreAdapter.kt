@@ -15,7 +15,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import io.github.ChinaVolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
 
-class ${activityClass}Adapter(context: Context?) : BaseLoadMoreRecyclerAdapter<Any?>(context) {
+class ${activityClass}Adapter(context: Context?) : BaseLoadMoreRecyclerAdapter<String>(context) {
   override fun onCreateViewHolderCustom(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
     val inflater = LayoutInflater.from(parent.context)
     val view = inflater.inflate(R.layout.item_${layoutName}, parent, false)

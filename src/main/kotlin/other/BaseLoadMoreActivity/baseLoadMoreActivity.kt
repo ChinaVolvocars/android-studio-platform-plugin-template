@@ -34,7 +34,7 @@ class ${activityClass}Activity : BaseLoadMoreActivity<String>() {
   }
 
   override fun getAdapter(): BaseLoadMoreRecyclerAdapter<String> {
-    val adapter = ${layoutName}Adapter(mContext)
+    val adapter = ${activityClass}Adapter(mContext)
     return adapter
   }
 
