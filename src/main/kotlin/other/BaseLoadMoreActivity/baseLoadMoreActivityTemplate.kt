@@ -5,7 +5,7 @@ import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
 
 val baseLoadMoreActivityTemplate
   get() = template {
-    name = "BaseLoadMoreActivityTemplate"
+    name = "BaseLoadMoreActivity"
     description = "适用于BaseLoadMoreActivityTemplate框架的Activity"
     minApi = MIN_API
 

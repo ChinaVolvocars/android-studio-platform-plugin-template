@@ -10,13 +10,13 @@ package ${packageName}
 
 import android.os.Bundle
 import ${packageName}.R
-import io.github.ChinaVolvocars.common.ui.activity.BaseLoadListActivity
-import io.github.ChinaVolvocars.common.ui.adapter.BaseRecyclerAdapter
-import io.github.ChinaVolvocars.common.ui.utils.BaseLoadListHelper
+import io.github.ChinaVolvocars.common.ui.activity.BaseLoadMoreActivity
+import io.github.ChinaVolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
+import io.github.ChinaVolvocars.common.ui.utils.BaseLoadMoreHelper
 import io.reactivex.Observable
 import java.util.*
 
-class ${activityClass}Activity : BaseLoadMoreActivity<Objects>() {
+class ${activityClass}Activity : BaseLoadMoreActivity<String>() {
 
   override fun getContentViewLayoutID(): Int {
     return R.layout.${layoutName}
@@ -34,7 +34,8 @@ class ${activityClass}Activity : BaseLoadMoreActivity<Objects>() {
   }
 
   override fun getAdapter(): BaseLoadMoreRecyclerAdapter<String> {
-    return TODO()
+    val adapter = ${layoutName}Adapter(mContext)
+    return adapter
   }
 
   override fun scrollLoadMore() {
