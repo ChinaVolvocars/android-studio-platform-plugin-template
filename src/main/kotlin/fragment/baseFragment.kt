@@ -13,7 +13,7 @@ import android.os.Bundle
 import android.view.View
 import io.github.ChinaVolvocars.common.ui.fragment.BaseFragment
 
-class ${activityClass}Fragment : BaseFragment() {
+class ${fragmentClass}Fragment : BaseFragment() {
   override fun getLayoutId(): Int {
     return R.layout.${layoutName}
   }
