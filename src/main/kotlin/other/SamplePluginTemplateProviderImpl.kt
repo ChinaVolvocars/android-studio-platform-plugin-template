@@ -2,6 +2,7 @@ package other
 
 import com.android.tools.idea.wizard.template.Template
 import com.android.tools.idea.wizard.template.WizardTemplateProvider
+import fragment.baseFragmentTemplate
 import other.BaseListActivity.baseListActivityTemplate
 import other.BaseLoadListActivity.baseLoadListActivityTemplate
 import other.BaseLoadMoreActivity.baseLoadMoreActivityTemplate
@@ -16,5 +17,6 @@ class SamplePluginTemplateProviderImpl : WizardTemplateProvider() {
     baseListActivityTemplate,
     baseLoadListActivityTemplate,
     baseLoadMoreActivityTemplate,
+    baseFragmentTemplate,
   )
 }
