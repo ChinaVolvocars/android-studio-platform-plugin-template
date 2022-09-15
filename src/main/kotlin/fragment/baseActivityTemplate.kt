@@ -8,8 +8,8 @@ import other.toSnakeCase
 
 val baseFragmentTemplate
   get() = template {
-    name = "baseFragment"
-    description = "适用于baseFragment框架的Activity"
+    name = "BaseFragment"
+    description = "适用于BaseFragment框架的Activity"
     minApi = MIN_API
 
     category = Category.Other

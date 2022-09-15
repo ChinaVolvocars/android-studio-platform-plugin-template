@@ -3,6 +3,7 @@ package other.activity
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
 import other.mvvm.activity.mvvmActivityRecipe
+import other.toSnakeCase
 
 val baseActivityTemplate
   get() = template {
@@ -33,7 +34,7 @@ val baseActivityTemplate
       default = "activity_main"
       help = "请输入布局的名字"
       constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-      suggest = { "${activityToLayout(activityClass.value.lowercase())}" }
+      suggest = { activityToLayout(activityClass.value.toSnakeCase()) }
     }
 
     val packageName = defaultPackageNameParameter

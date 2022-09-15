@@ -10,7 +10,7 @@ fun baseActivity(
 package ${packageName}
 
 import android.os.Bundle
-import ${applicationPackage}.R
+import ${packageName}.R
 import io.github.ChinaVolvocars.common.ui.activity.BaseActivity
 
 class ${activityClass}Activity : BaseActivity() {
