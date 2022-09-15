@@ -2,7 +2,9 @@ package fragment
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
+import com.android.tools.idea.wizard.template.impl.activities.common.generateSimpleLayout
 import other.mvvm.activity.mvvmActivityRecipe
+import other.toSnakeCase
 
 val baseFragmentTemplate
   get() = template {
@@ -33,7 +35,7 @@ val baseFragmentTemplate
       default = "fragment_main"
       help = "请输入布局的名字"
       constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-      suggest = { "${fragmentToLayout(fragmentClass.value.lowercase())}" }
+      suggest = { fragmentToLayout(fragmentClass.value.toSnakeCase()) }
     }
 
     val packageName = defaultPackageNameParameter
