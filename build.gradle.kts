@@ -13,10 +13,6 @@ plugins {
   id("org.jetbrains.changelog") version "1.3.1"
   // Gradle Qodana Plugin
   id("org.jetbrains.qodana") version "0.1.13"
-  //Gradle AndroidStudio Plugin
-  //id("org.jetbrains.kotlin.android") version "1.7.10"
-  //id("org.jetbrains.android") version "212.5712.43"
-  //id("com.intellij.modules.androidstudio") version "212.5712.43"
 }
 
 group = properties("pluginGroup")
@@ -25,15 +21,8 @@ version = properties("pluginVersion")
 // Configure project's dependencies
 repositories {
   mavenCentral()
-  maven("https://plugins.gradle.org/m2/")
-  maven("https://oss.sonatype.org/content/repositories/snapshots/")
   gradlePluginPortal()
 }
-
-//dependencies{
-//    compileOnly(files("lib/wizard-template.jar"))
-//}
-
 
 // Set the JVM language level used to compile sources and generate files - Java 11 is required since 2020.3
 kotlin {
@@ -55,12 +44,6 @@ intellij {
   // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
   plugins.set(properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty))
 }
-
-//runIde {
-//    // Absolute path to installed target 3.5 Android Studio to use as
-//    // IDE Development Instance (the "Contents" directory is macOS specific):
-//    ideDir.set(file("/Applications/Android Studio.app/Contents"))
-//}
 
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {

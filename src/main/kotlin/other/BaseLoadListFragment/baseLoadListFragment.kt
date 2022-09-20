@@ -34,7 +34,7 @@ class ${fragmentClass}Fragment : BaseLoadListFragment<Any>() {
   }
 
   override fun getAdapter(): BaseRecyclerAdapter<Any, ${fragmentClass}Adapter.${fragmentClass}Holder> {
-    val adapter = ${fragmentClass}Adapter(mContext)
+    val adapter = ${fragmentClass}Adapter(mActivity)
     return adapter
   }
 
