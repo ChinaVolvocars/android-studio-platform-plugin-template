@@ -2,7 +2,7 @@ package other.BaseLoadMoreFragment
 
 fun baseLoadMoreAdapter(
   applicationPackage: String?,
-  activityClass: String,
+  fragmentClass: String,
   layoutName: String,
   packageName: String
 ) = """
@@ -15,18 +15,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import io.github.ChinaVolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
 
-class ${activityClass}Adapter(context: Context?) : BaseLoadMoreRecyclerAdapter<String>(context) {
+class ${fragmentClass}Adapter(context: Context?) : BaseLoadMoreRecyclerAdapter<Any>(context) {
   override fun onCreateViewHolderCustom(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
     val inflater = LayoutInflater.from(parent.context)
     val view = inflater.inflate(R.layout.item_${layoutName}, parent, false)
-    return ${activityClass}Holder(view)
+    return ${fragmentClass}Holder(view)
   }
 
   override fun onBindViewHolderCustom(holder: RecyclerView.ViewHolder, position: Int) {
     super.onBindViewHolderCustom(holder, position)
   }
 
-  inner class ${activityClass}Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+  inner class ${fragmentClass}Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     init {}
   }
 }

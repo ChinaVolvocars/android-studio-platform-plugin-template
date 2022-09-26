@@ -7,6 +7,7 @@ import other.BaseListActivity.baseListActivityTemplate
 import other.BaseLoadListActivity.baseLoadListActivityTemplate
 import other.BaseLoadListFragment.baseLoadListFragmentTemplate
 import other.BaseLoadMoreActivity.baseLoadMoreActivityTemplate
+import other.BaseLoadMoreFragment.baseLoadMoreFragmentTemplate
 import other.activity.baseActivityTemplate
 import other.mvvm.activity.mvvmActivityTemplate
 
@@ -20,5 +21,6 @@ class SamplePluginTemplateProviderImpl : WizardTemplateProvider() {
     baseLoadMoreActivityTemplate,
     baseFragmentTemplate,
     baseLoadListFragmentTemplate,
+    baseLoadMoreFragmentTemplate,
   )
 }

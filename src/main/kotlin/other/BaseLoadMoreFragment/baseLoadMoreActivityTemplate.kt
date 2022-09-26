@@ -13,15 +13,15 @@ val baseLoadMoreFragmentTemplate
     category = Category.Other
     formFactor = FormFactor.Mobile
     screens = listOf(
-        WizardUiContext.ActivityGallery,
-        WizardUiContext.MenuEntry,
-        WizardUiContext.NewProject,
-        WizardUiContext.NewModule
+      WizardUiContext.ActivityGallery,
+      WizardUiContext.MenuEntry,
+      WizardUiContext.NewProject,
+      WizardUiContext.NewModule
     )
 
     lateinit var layoutName: StringParameter
 
-    val activityClass = stringParameter {
+    val fragmentClass = stringParameter {
       name = "fragment Name"
       default = "SimpleList"
       help = "只输入名字，不要包含Activity"
@@ -33,23 +33,23 @@ val baseLoadMoreFragmentTemplate
       default = "activity_main"
       help = "请输入布局的名字"
       constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-      suggest = { fragmentToLayout(activityClass.value.toSnakeCase()) }
+      suggest = { fragmentToLayout(fragmentClass.value.toSnakeCase()) }
     }
 
     val packageName = defaultPackageNameParameter
 
     widgets(
-        TextFieldWidget(activityClass),
-        TextFieldWidget(layoutName),
-        PackageNameWidget(packageName)
+      TextFieldWidget(fragmentClass),
+      TextFieldWidget(layoutName),
+      PackageNameWidget(packageName)
     )
 //        thumb { File("logo.png") }
     recipe = { data: TemplateData ->
       baseLoadMoreFragmentRecipe(
-          data as ModuleTemplateData,
-          activityClass.value,
-          layoutName.value,
-          packageName.value
+        data as ModuleTemplateData,
+        fragmentClass.value,
+        layoutName.value,
+        packageName.value
       )
     }
   }

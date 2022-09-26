@@ -2,49 +2,50 @@ package other.BaseLoadMoreFragment
 
 fun baseLoadMoreFragment(
   applicationPackage: String?,
-  activityClass: String,
+  fragmentClass: String,
   layoutName: String,
   packageName: String
 ) = """
 package ${packageName}
 
-import android.os.Bundle
 import ${packageName}.R
-import io.github.ChinaVolvocars.common.ui.activity.BaseLoadMoreActivity
+import android.os.Bundle
+import android.view.View
 import io.github.ChinaVolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
+import io.github.ChinaVolvocars.common.ui.fragment.BaseLoadMoreFragment
 import io.github.ChinaVolvocars.common.ui.utils.BaseLoadMoreHelper
 import io.reactivex.Observable
-import java.util.*
 
-class ${activityClass}Activity : BaseLoadMoreFragment<String>() {
+class ${fragmentClass}Fragment() : BaseLoadMoreFragment<Any>() {
 
-  override fun getContentViewLayoutID(): Int {
-    return R.layout.${layoutName}
+  lateinit var loadListHelper: BaseLoadMoreHelper<Any>
+
+  override fun getLayoutId(): Int {
+    return R.layout.layout_simple_swipe_recycler_view
   }
 
-  private lateinit var loadMoreHelper: BaseLoadMoreHelper<String>
-  
-  override fun initViewsAndEvents(savedInstanceState: Bundle?) {
-    super.initViewsAndEvents(savedInstanceState)
-    loadMoreHelper = object : BaseLoadMoreHelper<String>(this, this) {
-      override fun load(pageIndex: Int, pageSize: Int): Observable<out MutableCollection<String>> {
+  override fun initViewsAndEvents(root: View?, savedInstanceState: Bundle?) {
+    super.initViewsAndEvents(root, savedInstanceState)
+    loadListHelper = object : BaseLoadMoreHelper<Any>(this, this) {
+      override fun load(pageIndex: Int, pageSize: Int): Observable<out MutableCollection<Any>?> {
         return TODO()
       }
     }
+    loadListHelper.loadData()
   }
 
-  override fun getAdapter(): BaseLoadMoreRecyclerAdapter<String> {
-    val adapter = ${activityClass}Adapter(mContext)
+  override fun getAdapter(): BaseLoadMoreRecyclerAdapter<Any> {
+    val adapter = ${fragmentClass}Adapter(mActivity)
     return adapter
   }
 
   override fun scrollLoadMore() {
-    loadMoreHelper.loadDataMore()
+    loadListHelper.loadDataMore()
   }
 
   override fun pullLoad() {
-    loadMoreHelper.loadData()
+    loadListHelper.loadData()
   }
-  
 }
+
 """
