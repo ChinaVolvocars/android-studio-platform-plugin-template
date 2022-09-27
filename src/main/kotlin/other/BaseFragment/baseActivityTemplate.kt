@@ -1,9 +1,7 @@
-package fragment
+package other.BaseFragment
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
-import com.android.tools.idea.wizard.template.impl.activities.common.generateSimpleLayout
-import other.mvvm.activity.mvvmActivityRecipe
 import other.toSnakeCase
 
 val baseFragmentTemplate

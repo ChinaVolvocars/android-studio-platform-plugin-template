@@ -2,7 +2,8 @@ package other
 
 import com.android.tools.idea.wizard.template.Template
 import com.android.tools.idea.wizard.template.WizardTemplateProvider
-import fragment.baseFragmentTemplate
+import other.BaseFragment.baseFragmentTemplate
+
 import other.BaseListActivity.baseListActivityTemplate
 import other.BaseLoadListActivity.baseLoadListActivityTemplate
 import other.BaseLoadListFragment.baseLoadListFragmentTemplate

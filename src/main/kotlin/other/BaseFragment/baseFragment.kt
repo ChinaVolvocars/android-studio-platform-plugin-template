@@ -1,4 +1,4 @@
-package fragment
+package other.BaseFragment
 
 
 fun baseFragment(

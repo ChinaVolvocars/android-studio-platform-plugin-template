@@ -1,4 +1,4 @@
-package fragment
+package other.BaseFragment
 
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
