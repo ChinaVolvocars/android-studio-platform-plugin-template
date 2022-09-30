@@ -10,7 +10,7 @@ val baseLoadListFragmentTemplate
     description = "适用于BaseLoadListFragment框架的Activity"
     minApi = MIN_API
 
-    category = Category.Other
+    category = Category.Fragment
     formFactor = FormFactor.Mobile
     screens = listOf(
         WizardUiContext.ActivityGallery,

@@ -11,7 +11,7 @@ val baseActivityTemplate
     description = "适用于BaseActivity框架的Activity"
     minApi = MIN_API
 
-    category = Category.Other
+    category = Category.Activity
     formFactor = FormFactor.Mobile
     screens = listOf(
       WizardUiContext.ActivityGallery,

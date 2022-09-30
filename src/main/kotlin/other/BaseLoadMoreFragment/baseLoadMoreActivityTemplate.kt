@@ -10,7 +10,7 @@ val baseLoadMoreFragmentTemplate
     description = "适用于BaseLoadMoreFragmentTemplate框架的Fragment"
     minApi = MIN_API
 
-    category = Category.Other
+    category = Category.Fragment
     formFactor = FormFactor.Mobile
     screens = listOf(
       WizardUiContext.ActivityGallery,
