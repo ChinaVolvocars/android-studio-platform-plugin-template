@@ -3,28 +3,35 @@
 	<id>com.github.chinavolvocars.androidstudioplatformplugintemplate</id>
 	<name>android-studio-platform-plugin-template</name>
 	<vendor>chinavolvocars</vendor>
-	
+
 	<depends>com.intellij.modules.platform</depends>
 	<depends>org.jetbrains.android</depends>
 	<depends>org.jetbrains.kotlin</depends>
 	<depends>com.intellij.modules.java</depends>
 	<depends>com.intellij.modules.platform</depends>
 	<depends>com.intellij.modules.androidstudio</depends>
-	
+
 	<extensions defaultExtensionNs="com.intellij">
 		<applicationService
 			serviceImplementation="com.github.chinavolvocars.androidstudioplatformplugintemplate.services.MyApplicationService" />
 		<projectService
 			serviceImplementation="com.github.chinavolvocars.androidstudioplatformplugintemplate.services.MyProjectService" />
 	</extensions>
-	
+
 	<applicationListeners>
 		<listener
 			class="com.github.chinavolvocars.androidstudioplatformplugintemplate.listeners.MyProjectManagerListener"
 			topic="com.intellij.openapi.project.ProjectManagerListener" />
 	</applicationListeners>
-	
+
 	<extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
 		<wizardTemplateProvider implementation="other.SamplePluginTemplateProviderImpl" />
 	</extensions>
+    <actions>
+        <action id="test_id" class="HelloAction" text="通知" description="通知一下">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
+
+
 </idea-plugin>
