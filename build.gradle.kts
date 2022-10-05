@@ -22,6 +22,7 @@ version = properties("pluginVersion")
 repositories {
   mavenCentral()
   gradlePluginPortal()
+  maven("https://www.jetbrains.com/intellij-repository/releases")
 }
 
 // Set the JVM language level used to compile sources and generate files - Java 11 is required since 2020.3
@@ -36,6 +37,8 @@ intellij {
 
 //    localPath = 'C:/Program Files/Android/Android Studio/'
 //    plugins = ['android']
+  //localPath 'C:/Program Files/Android/Android Studio/'
+//  plugins = ['Kotlin','android','git4idea']
 
   pluginName.set(properties("pluginName"))
   version.set(properties("platformVersion"))
