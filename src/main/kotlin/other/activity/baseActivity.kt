@@ -11,7 +11,7 @@ package ${packageName}
 
 import android.os.Bundle
 import ${packageName}.R
-import io.github.ChinaVolvocars.common.ui.activity.BaseActivity
+import io.github.chinavolvocars.common.ui.activity.BaseActivity
 
 class ${activityClass}Activity : BaseActivity() {
 

@@ -5,6 +5,7 @@ import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
 import other.mvvm.activity.mvvmActivityRecipe
 import other.toSnakeCase
 
+
 val baseActivityTemplate
   get() = template {
     name = "BaseActivity"
@@ -39,10 +40,17 @@ val baseActivityTemplate
 
     val packageName = defaultPackageNameParameter
 
+
+    val sourceLanguage = enumParameter<SourceLanguage> {
+      name = "source language"
+      default = SourceLanguage.Kotlin
+    }
+
     widgets(
       TextFieldWidget(activityClass),
       TextFieldWidget(layoutName),
-      PackageNameWidget(packageName)
+      PackageNameWidget(packageName),
+      EnumWidget(sourceLanguage)
     )
 //        thumb { File("logo.png") }
     recipe = { data: TemplateData ->
@@ -50,7 +58,8 @@ val baseActivityTemplate
         data as ModuleTemplateData,
         activityClass.value,
         layoutName.value,
-        packageName.value
+        packageName.value,
+        sourceLanguage.value,
       )
     }
   }
