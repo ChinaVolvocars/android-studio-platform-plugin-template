@@ -40,7 +40,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: zulu
-          java-version: 11
+          java-version: 17
+          cache: gradle
 
       # Run IDEA prepared for UI testing
       - name: Run IDE
