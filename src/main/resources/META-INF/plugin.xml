@@ -8,7 +8,6 @@
     <depends>org.jetbrains.android</depends>
     <depends>org.jetbrains.kotlin</depends>
     <depends>com.intellij.modules.java</depends>
-    <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService
@@ -27,13 +26,4 @@
         <wizardTemplateProvider implementation="other.SamplePluginTemplateProviderImpl"/>
     </extensions>
 
-    <actions>
-        <action id="PopupDialogAction"
-                class="PopupDialogAction"
-                text="Popup Dialog Action"
-                description="sdk Popup Dialog Action">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
-            <keyboard-shortcut first-keystroke="alt shift 9" keymap="$default"/>
-        </action>
-    </actions>
 </idea-plugin>
