@@ -8,8 +8,8 @@ import other.toSnakeCase
 
 val baseActivityTemplate
   get() = template {
-    name = "BaseActivity"
-    description = "适用于BaseActivity框架的Activity"
+    name = "Base Activity"
+    description = "Activities for the Base Activity framework"
     minApi = MIN_API
 
     category = Category.Activity
@@ -26,14 +26,14 @@ val baseActivityTemplate
     val activityClass = stringParameter {
       name = "Activity Name"
       default = "Main"
-      help = "只输入名字，不要包含Activity"
+      help = "name only，Do not include Activity"
       constraints = listOf(Constraint.NONEMPTY)
     }
 
     layoutName = stringParameter {
       name = "Layout Name"
       default = "activity_main"
-      help = "请输入布局的名字"
+      help = "Please enter a name for the layout"
       constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
       suggest = { activityToLayout(activityClass.value.toSnakeCase()) }
     }
@@ -42,7 +42,7 @@ val baseActivityTemplate
 
 
     val sourceLanguage = enumParameter<SourceLanguage> {
-      name = "source language"
+      name = "Source Language"
       default = SourceLanguage.Kotlin
     }
 
