@@ -1,8 +1,8 @@
 package other.activity
 
-import com.android.tools.idea.npw.module.recipes.generateManifest
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
+import other.SourceLanguage
 
 fun RecipeExecutor.baseActivityRecipe(
   moduleData: ModuleTemplateData,

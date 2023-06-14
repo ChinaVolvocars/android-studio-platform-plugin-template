@@ -2,7 +2,7 @@ package other.activity
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
-import other.mvvm.activity.mvvmActivityRecipe
+import other.SourceLanguage
 import other.toSnakeCase
 
 

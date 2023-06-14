@@ -11,8 +11,8 @@ package ${packageName}
 
 import android.os.Bundle
 import ${packageName}.R
-import io.github.ChinaVolvocars.common.ui.activity.BaseListActivity
-import io.github.ChinaVolvocars.common.ui.adapter.BaseRecyclerAdapter
+import io.github.chinavolvocars.common.ui.activity.BaseListActivity
+import io.github.chinavolvocars.common.ui.adapter.BaseRecyclerAdapter
 import java.util.*
 
 class ${activityClass}Activity : BaseListActivity() {

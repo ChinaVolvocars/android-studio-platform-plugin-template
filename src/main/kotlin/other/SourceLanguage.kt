@@ -1,4 +1,4 @@
-package other.activity
+package other
 
 enum class SourceLanguage(val language: String) {
   Java("Java"),

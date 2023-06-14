@@ -2,6 +2,7 @@ package other.BaseListActivity
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
+import other.SourceLanguage
 import other.toSnakeCase
 
 val baseListActivityTemplate
@@ -38,10 +39,17 @@ val baseListActivityTemplate
 
     val packageName = defaultPackageNameParameter
 
+    val sourceLanguage = enumParameter<SourceLanguage> {
+      name = "Source Language"
+      default = SourceLanguage.Kotlin
+    }
+
     widgets(
       TextFieldWidget(activityClass),
       TextFieldWidget(layoutName),
-      PackageNameWidget(packageName)
+      PackageNameWidget(packageName),
+      EnumWidget(sourceLanguage)
+
     )
 //        thumb { File("logo.png") }
     recipe = { data: TemplateData ->
@@ -49,7 +57,8 @@ val baseListActivityTemplate
         data as ModuleTemplateData,
         activityClass.value,
         layoutName.value,
-        packageName.value
+        packageName.value,
+        sourceLanguage.value,
       )
     }
   }
@@ -57,7 +66,7 @@ val baseListActivityTemplate
 
 val defaultPackageNameParameter
   get() = stringParameter {
-    name = "Package name"
+    name = "Package Name"
     visible = { !isNewModule }
     default = "com.dev996"
     constraints = listOf(Constraint.PACKAGE)
