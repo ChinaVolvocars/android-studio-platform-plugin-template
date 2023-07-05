@@ -2,12 +2,13 @@ package other.BaseFragment
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
+import other.SourceLanguage
 import other.toSnakeCase
 
 val baseFragmentTemplate
   get() = template {
     name = "BaseFragment"
-    description = "适用于BaseFragment框架的Activity"
+    description = "适用于BaseFragment框架的fragment"
     minApi = MIN_API
 
     category = Category.Fragment
@@ -38,10 +39,17 @@ val baseFragmentTemplate
 
     val packageName = defaultPackageNameParameter
 
+    val sourceLanguage = enumParameter<SourceLanguage> {
+      name = "Source Language"
+      default = SourceLanguage.Kotlin
+    }
+
+
     widgets(
       TextFieldWidget(fragmentClass),
       TextFieldWidget(layoutName),
-      PackageNameWidget(packageName)
+      PackageNameWidget(packageName),
+      EnumWidget(sourceLanguage)
     )
 //        thumb { File("logo.png") }
     recipe = { data: TemplateData ->
@@ -49,7 +57,8 @@ val baseFragmentTemplate
         data as ModuleTemplateData,
         fragmentClass.value,
         layoutName.value,
-        packageName.value
+        packageName.value,
+        sourceLanguage.value
       )
     }
   }
