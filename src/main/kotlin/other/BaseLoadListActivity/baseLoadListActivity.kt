@@ -10,7 +10,7 @@ fun baseLoadListActivity(
 package ${packageName}
 
 import android.os.Bundle
-import ${packageName}.R
+import ${applicationPackage}.R
 import io.github.chinavolvocars.common.ui.activity.BaseLoadListActivity
 import io.github.chinavolvocars.common.ui.adapter.BaseRecyclerAdapter
 import io.github.chinavolvocars.common.ui.utils.BaseLoadListHelper

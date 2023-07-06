@@ -9,7 +9,7 @@ fun baseLoadMoreActivity(
 package ${packageName}
 
 import android.os.Bundle
-import ${packageName}.R
+import ${applicationPackage}.R
 import io.github.chinavolvocars.common.ui.activity.BaseLoadMoreActivity
 import io.github.chinavolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
 import io.github.chinavolvocars.common.ui.utils.BaseLoadMoreHelper

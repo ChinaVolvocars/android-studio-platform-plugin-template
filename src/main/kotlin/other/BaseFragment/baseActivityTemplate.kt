@@ -7,8 +7,8 @@ import other.toSnakeCase
 
 val baseFragmentTemplate
   get() = template {
-    name = "BaseFragment"
-    description = "适用于BaseFragment框架的fragment"
+    name = "Base Fragment"
+    description = "Fragments for the Base Fragment framework"
     minApi = MIN_API
 
     category = Category.Fragment
@@ -25,14 +25,14 @@ val baseFragmentTemplate
     val fragmentClass = stringParameter {
       name = "fragment Name"
       default = "Main"
-      help = "只输入名字，不要包含fragment"
+      help = "name only，Do not include Fragment"
       constraints = listOf(Constraint.NONEMPTY)
     }
 
     layoutName = stringParameter {
       name = "Layout Name"
       default = "fragment_main"
-      help = "请输入布局的名字"
+      help = "Please enter a name for the layout"
       constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
       suggest = { fragmentToLayout(fragmentClass.value.toSnakeCase()) }
     }

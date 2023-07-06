@@ -8,7 +8,7 @@ import other.toSnakeCase
 val baseListActivityTemplate
   get() = template {
     name = "Base List Activity"
-    description = "Activity Activities for the Base List Activity framework"
+    description = "Fragments for the Base List Activity framework"
     minApi = MIN_API
 
     category = Category.Activity

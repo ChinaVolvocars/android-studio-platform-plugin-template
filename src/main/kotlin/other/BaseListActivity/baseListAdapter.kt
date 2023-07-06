@@ -13,7 +13,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ${packageName}.R
+import ${applicationPackage}.R
 import androidx.recyclerview.widget.RecyclerView
 import io.github.chinavolvocars.common.ui.adapter.BaseRecyclerAdapter
 import java.util.*

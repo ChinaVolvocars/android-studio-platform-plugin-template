@@ -13,10 +13,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ${packageName}.R
 import androidx.recyclerview.widget.RecyclerView
-import io.github.ChinaVolvocars.common.ui.adapter.BaseRecyclerAdapter
+import io.github.chinavolvocars.common.ui.adapter.BaseRecyclerAdapter
 import java.util.*
+import ${applicationPackage}.R
 
 class ${fragmentClass}Adapter(context: Context?) :
   BaseRecyclerAdapter<Any, ${fragmentClass}Adapter.${fragmentClass}Holder>(context) {

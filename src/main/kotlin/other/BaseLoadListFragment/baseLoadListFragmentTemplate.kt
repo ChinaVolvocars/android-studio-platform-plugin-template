@@ -2,21 +2,22 @@ package other.BaseLoadListFragment
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
+import other.SourceLanguage
 import other.toSnakeCase
 
 val baseLoadListFragmentTemplate
   get() = template {
-    name = "BaseLoadListFragment"
-    description = "适用于BaseLoadListFragment框架的Activity"
+    name = "Base Load List Fragment"
+    description = "Fragments for the Base Load List Fragment framework"
     minApi = MIN_API
 
     category = Category.Fragment
     formFactor = FormFactor.Mobile
     screens = listOf(
-        WizardUiContext.ActivityGallery,
-        WizardUiContext.MenuEntry,
-        WizardUiContext.NewProject,
-        WizardUiContext.NewModule
+      WizardUiContext.ActivityGallery,
+      WizardUiContext.MenuEntry,
+      WizardUiContext.NewProject,
+      WizardUiContext.NewModule
     )
 
     lateinit var layoutName: StringParameter
@@ -24,32 +25,39 @@ val baseLoadListFragmentTemplate
     val fragmentClass = stringParameter {
       name = "Fragment Name"
       default = "SimpleList"
-      help = "只输入名字，不要包含Fragment"
+      help = "name only，Do not include Fragment"
       constraints = listOf(Constraint.NONEMPTY)
     }
 
     layoutName = stringParameter {
       name = "Layout Name"
       default = "fragment_main"
-      help = "请输入布局的名字"
+      help = "Please enter a name for the layout"
       constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
       suggest = { fragmentToLayout(fragmentClass.value.toSnakeCase()) }
     }
 
     val packageName = defaultPackageNameParameter
 
+    val sourceLanguage = enumParameter<SourceLanguage> {
+      name = "Source Language"
+      default = SourceLanguage.Kotlin
+    }
+
     widgets(
-        TextFieldWidget(fragmentClass),
-        TextFieldWidget(layoutName),
-        PackageNameWidget(packageName)
+      TextFieldWidget(fragmentClass),
+      TextFieldWidget(layoutName),
+      PackageNameWidget(packageName),
+      EnumWidget(sourceLanguage)
     )
 //        thumb { File("logo.png") }
     recipe = { data: TemplateData ->
       baseLoadListFragmentRecipe(
-          data as ModuleTemplateData,
-          fragmentClass.value,
-          layoutName.value,
-          packageName.value
+        data as ModuleTemplateData,
+        fragmentClass.value,
+        layoutName.value,
+        packageName.value,
+        sourceLanguage.value
       )
     }
   }

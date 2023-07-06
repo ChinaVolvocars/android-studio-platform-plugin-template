@@ -13,7 +13,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import io.github.ChinaVolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
+import io.github.chinavolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
+import ${applicationPackage}.R
 
 class ${fragmentClass}Adapter(context: Context?) : BaseLoadMoreRecyclerAdapter<Any>(context) {
   override fun onCreateViewHolderCustom(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

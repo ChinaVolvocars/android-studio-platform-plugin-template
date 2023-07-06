@@ -13,8 +13,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.Nullable;
-import ${packageName}.R;
 import io.github.chinavolvocars.common.ui.fragment.BaseFragment;
+import ${applicationPackage}.R;
 
 public class ${fragmentClass}Fragment extends BaseFragment {
   @Override

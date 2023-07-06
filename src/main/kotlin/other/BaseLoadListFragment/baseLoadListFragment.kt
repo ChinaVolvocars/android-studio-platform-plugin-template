@@ -11,10 +11,11 @@ package ${packageName}
 
 import android.os.Bundle
 import android.view.View
-import io.github.ChinaVolvocars.common.ui.adapter.BaseRecyclerAdapter
-import io.github.ChinaVolvocars.common.ui.fragment.BaseLoadListFragment
-import io.github.ChinaVolvocars.common.ui.utils.BaseLoadListHelper
+import io.github.chinavolvocars.common.ui.adapter.BaseRecyclerAdapter
+import io.github.chinavolvocars.common.ui.fragment.BaseLoadListFragment
+import io.github.chinavolvocars.common.ui.utils.BaseLoadListHelper
 import io.reactivex.Observable
+import ${applicationPackage}.R
 
 class ${fragmentClass}Fragment : BaseLoadListFragment<Any>() {
 

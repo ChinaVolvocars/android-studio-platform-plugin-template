@@ -1,8 +1,8 @@
-package other.BaseLoadMoreActivity
+package other.BaseLoadMoreFragment
 
-fun baseLoadMoreActivityJava(
+fun baseLoadMoreFragmentJava(
   applicationPackage: String?,
-  activityClass: String,
+  fragmentClass: String,
   layoutName: String,
   packageName: String
 ) = """
@@ -10,30 +10,30 @@ package ${packageName};
 
 import android.os.Bundle;
 import android.view.View;
-import ${applicationPackage}.R;
 
+import androidx.annotation.Nullable;
+import ${applicationPackage}.R;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import io.github.chinavolvocars.common.ui.activity.BaseLoadMoreActivity;
 import io.github.chinavolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter;
 import io.github.chinavolvocars.common.ui.adapter.OnRecyclerItemClickListener;
+import io.github.chinavolvocars.common.ui.fragment.BaseLoadMoreFragment;
 import io.github.chinavolvocars.common.ui.utils.BaseLoadMoreHelper;
 import io.reactivex.Observable;
 
-public class ${activityClass}Activity extends BaseLoadMoreActivity<Object> {
+public class ${fragmentClass}Fragment extends BaseLoadMoreFragment<Object> {
 
   private BaseLoadMoreHelper<Object> baseLoadMoreHelper;
 
   @Override
-  protected int getContentViewLayoutID() {
-    return R.layout.${layoutName};
+  protected int getLayoutId() {
+    return R.layout.$layoutName;
   }
 
   @Override
-  protected void initViewsAndEvents(Bundle savedInstanceState) {
-    super.initViewsAndEvents(savedInstanceState);
-    setTitle("${activityClass}");
+  protected void initViewsAndEvents(View root, @Nullable Bundle savedInstanceState) {
+    super.initViewsAndEvents(root, savedInstanceState);
     baseLoadMoreHelper = new BaseLoadMoreHelper<Object>(this, this) {
       @Override
       protected Observable<? extends Collection<Object>> load(int pageIndex, int pageSize) {
@@ -49,7 +49,7 @@ public class ${activityClass}Activity extends BaseLoadMoreActivity<Object> {
 
   @Override
   protected BaseLoadMoreRecyclerAdapter<Object> getAdapter() {
-    ${activityClass}Adapter adapter = new ${activityClass}Adapter(mContext);
+    ${fragmentClass}Adapter adapter = new ${fragmentClass}Adapter(mActivity);
     adapter.setOnItemClickListener(new OnRecyclerItemClickListener() {
       @Override
       public void onItemClick(View view, int position) {

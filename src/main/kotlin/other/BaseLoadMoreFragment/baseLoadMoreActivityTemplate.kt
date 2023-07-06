@@ -2,12 +2,13 @@ package other.BaseLoadMoreFragment
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
+import other.SourceLanguage
 import other.toSnakeCase
 
 val baseLoadMoreFragmentTemplate
   get() = template {
-    name = "BaseLoadMoreFragment"
-    description = "适用于BaseLoadMoreFragmentTemplate框架的Fragment"
+    name = "Base Load More Fragment"
+    description = "Fragments for the Base Load More Fragment framework"
     minApi = MIN_API
 
     category = Category.Fragment
@@ -22,26 +23,32 @@ val baseLoadMoreFragmentTemplate
     lateinit var layoutName: StringParameter
 
     val fragmentClass = stringParameter {
-      name = "fragment Name"
+      name = "Fragment Name"
       default = "SimpleList"
-      help = "只输入名字，不要包含Activity"
+      help = "Please enter a name for the layout"
       constraints = listOf(Constraint.NONEMPTY)
     }
 
     layoutName = stringParameter {
       name = "Layout Name"
-      default = "activity_main"
-      help = "请输入布局的名字"
+      default = "fragment_main"
+      help = "Please enter a name for the layout"
       constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
       suggest = { fragmentToLayout(fragmentClass.value.toSnakeCase()) }
     }
 
     val packageName = defaultPackageNameParameter
 
+    val sourceLanguage = enumParameter<SourceLanguage> {
+      name = "Source Language"
+      default = SourceLanguage.Kotlin
+    }
+
     widgets(
       TextFieldWidget(fragmentClass),
       TextFieldWidget(layoutName),
-      PackageNameWidget(packageName)
+      PackageNameWidget(packageName),
+      EnumWidget(sourceLanguage)
     )
 //        thumb { File("logo.png") }
     recipe = { data: TemplateData ->
@@ -49,7 +56,8 @@ val baseLoadMoreFragmentTemplate
         data as ModuleTemplateData,
         fragmentClass.value,
         layoutName.value,
-        packageName.value
+        packageName.value,
+        sourceLanguage.value
       )
     }
   }

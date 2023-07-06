@@ -8,12 +8,12 @@ fun baseLoadMoreFragment(
 ) = """
 package ${packageName}
 
-import ${packageName}.R
+import ${applicationPackage}.R
 import android.os.Bundle
 import android.view.View
-import io.github.ChinaVolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
-import io.github.ChinaVolvocars.common.ui.fragment.BaseLoadMoreFragment
-import io.github.ChinaVolvocars.common.ui.utils.BaseLoadMoreHelper
+import io.github.chinavolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
+import io.github.chinavolvocars.common.ui.fragment.BaseLoadMoreFragment
+import io.github.chinavolvocars.common.ui.utils.BaseLoadMoreHelper
 import io.reactivex.Observable
 
 class ${fragmentClass}Fragment() : BaseLoadMoreFragment<Any>() {
@@ -21,7 +21,7 @@ class ${fragmentClass}Fragment() : BaseLoadMoreFragment<Any>() {
   lateinit var loadListHelper: BaseLoadMoreHelper<Any>
 
   override fun getLayoutId(): Int {
-    return R.layout.layout_simple_swipe_recycler_view
+    return R.layout.$layoutName
   }
 
   override fun initViewsAndEvents(root: View?, savedInstanceState: Bundle?) {

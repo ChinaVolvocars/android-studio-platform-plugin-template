@@ -1,9 +1,9 @@
-package other.BaseLoadListActivity
+package other.BaseLoadListFragment
 
 
 fun baseLoadListAdapterJava(
   applicationPackage: String?,
-  activityClass: String,
+  fragmentClass: String,
   layoutName: String,
   packageName: String
 ) = """
@@ -19,36 +19,37 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 import java.util.Objects;
-import ${applicationPackage}.R;
+import ${applicationPackage}.R
+
 import io.github.chinavolvocars.common.ui.adapter.BaseRecyclerAdapter;
 
-public class ${activityClass}Adapter extends BaseRecyclerAdapter<Objects, ${activityClass}Adapter.${activityClass}Holder> {
+public class ${fragmentClass}Adapter extends BaseRecyclerAdapter<Objects, ${fragmentClass}Adapter.${fragmentClass}Holder> {
 
-  public ${activityClass}Adapter(Context context) {
+  public ${fragmentClass}Adapter(Context context) {
     super(context);
   }
 
   @NonNull
   @Override
-  public ${activityClass}Adapter.${activityClass}Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+  public ${fragmentClass}Adapter.${fragmentClass}Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     View view = LayoutInflater.from(context).inflate(R.layout.item_${layoutName}, parent, false);
-    ${activityClass}Holder holder = new ${activityClass}Holder(view);
+    ${fragmentClass}Holder holder = new ${fragmentClass}Holder(view);
     return holder;
   }
 
   @Override
-  public void onBindViewHolder(${activityClass}Holder holder, int position) {
+  public void onBindViewHolder(${fragmentClass}Holder holder, int position) {
     super.onBindViewHolder(holder, position);
   }
 
   @Override
-  public void onBindViewHolder(@NonNull ${activityClass}Holder holder, int position, @NonNull List<Object> payloads) {
+  public void onBindViewHolder(@NonNull ${fragmentClass}Holder holder, int position, @NonNull List<Object> payloads) {
     super.onBindViewHolder(holder, position, payloads);
   }
 
-  public class ${activityClass}Holder extends RecyclerView.ViewHolder {
+  public class ${fragmentClass}Holder extends RecyclerView.ViewHolder {
 
-    public ${activityClass}Holder(@NonNull View itemView) {
+    public ${fragmentClass}Holder(@NonNull View itemView) {
       super(itemView);
     }
 

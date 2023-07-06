@@ -7,8 +7,8 @@ import other.toSnakeCase
 
 val baseLoadListActivityTemplate
   get() = template {
-    name = "BaseLoadListActivity"
-    description = "适用于BaseLoadListActivity框架的Activity"
+    name = "Base Load List Activity"
+    description = "Activities for the Base Load List Activity framework"
     minApi = MIN_API
 
     category = Category.Activity
@@ -25,14 +25,14 @@ val baseLoadListActivityTemplate
     val activityClass = stringParameter {
       name = "Activity Name"
       default = "SimpleList"
-      help = "只输入名字，不要包含Activity"
+      help = "name only，Do not include Activity"
       constraints = listOf(Constraint.NONEMPTY)
     }
 
     layoutName = stringParameter {
       name = "Layout Name"
       default = "activity_main"
-      help = "请输入布局的名字"
+      help = "Please enter a name for the layout"
       constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
       suggest = { activityToLayout(activityClass.value.toSnakeCase()) }
     }

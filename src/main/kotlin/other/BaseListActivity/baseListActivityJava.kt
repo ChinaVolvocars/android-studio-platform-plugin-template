@@ -13,6 +13,7 @@ package ${packageName};
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.RecyclerView;
+import ${applicationPackage}.R;
 
 import io.github.chinavolvocars.common.ui.activity.BaseListActivity;
 import io.github.chinavolvocars.common.ui.adapter.BaseRecyclerAdapter;

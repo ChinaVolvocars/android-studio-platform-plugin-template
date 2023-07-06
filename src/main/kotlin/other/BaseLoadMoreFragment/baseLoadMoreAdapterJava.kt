@@ -1,34 +1,33 @@
-package other.BaseLoadMoreActivity
+package other.BaseLoadMoreFragment
 
 fun baseLoadMoreAdapterJava(
   applicationPackage: String?,
-  activityClass: String,
+  fragmentClass: String,
   layoutName: String,
   packageName: String
 ) = """
 package ${packageName};
 
-import ${applicationPackage}.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import ${applicationPackage}.R;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import io.github.chinavolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter;
 
-public class ${activityClass}Adapter extends BaseLoadMoreRecyclerAdapter<Object> {
+public class ${fragmentClass}Adapter extends BaseLoadMoreRecyclerAdapter<Object> {
 
-  public ${activityClass}Adapter(Context context) {
+  public ${fragmentClass}Adapter(Context context) {
     super(context);
   }
 
   @Override
   protected RecyclerView.ViewHolder onCreateViewHolderCustom(ViewGroup parent, int viewType) {
     View view = LayoutInflater.from(context).inflate(R.layout.item_${layoutName}, parent, false);
-    ${activityClass}Holder holder = new ${activityClass}Holder(view);
+    ${fragmentClass}Holder holder = new ${fragmentClass}Holder(view);
     return holder;
 
   }
@@ -39,9 +38,9 @@ public class ${activityClass}Adapter extends BaseLoadMoreRecyclerAdapter<Object>
 
   }
 
-  public class ${activityClass}Holder extends RecyclerView.ViewHolder {
+  public class ${fragmentClass}Holder extends RecyclerView.ViewHolder {
 
-    public ${activityClass}Holder(@NonNull View itemView) {
+    public ${fragmentClass}Holder(@NonNull View itemView) {
       super(itemView);
     }
   }

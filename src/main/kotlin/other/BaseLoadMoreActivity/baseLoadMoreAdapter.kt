@@ -8,6 +8,8 @@ fun baseLoadMoreAdapter(
 ) = """
 package ${packageName}
 
+import ${applicationPackage}.R
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
