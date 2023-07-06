@@ -10,9 +10,9 @@ package ${packageName}
 
 import android.os.Bundle
 import ${packageName}.R
-import io.github.ChinaVolvocars.common.ui.activity.BaseLoadMoreActivity
-import io.github.ChinaVolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
-import io.github.ChinaVolvocars.common.ui.utils.BaseLoadMoreHelper
+import io.github.chinavolvocars.common.ui.activity.BaseLoadMoreActivity
+import io.github.chinavolvocars.common.ui.adapter.BaseLoadMoreRecyclerAdapter
+import io.github.chinavolvocars.common.ui.utils.BaseLoadMoreHelper
 import io.reactivex.Observable
 import java.util.*
 
