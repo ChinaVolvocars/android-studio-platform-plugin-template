@@ -49,7 +49,6 @@ val baseListActivityTemplate
       TextFieldWidget(layoutName),
       PackageNameWidget(packageName),
       EnumWidget(sourceLanguage)
-
     )
 //        thumb { File("logo.png") }
     recipe = { data: TemplateData ->

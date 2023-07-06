@@ -11,9 +11,9 @@ package ${packageName}
 
 import android.os.Bundle
 import ${packageName}.R
-import io.github.ChinaVolvocars.common.ui.activity.BaseLoadListActivity
-import io.github.ChinaVolvocars.common.ui.adapter.BaseRecyclerAdapter
-import io.github.ChinaVolvocars.common.ui.utils.BaseLoadListHelper
+import io.github.chinavolvocars.common.ui.activity.BaseLoadListActivity
+import io.github.chinavolvocars.common.ui.adapter.BaseRecyclerAdapter
+import io.github.chinavolvocars.common.ui.utils.BaseLoadListHelper
 import io.reactivex.Observable
 import java.util.*
 
@@ -26,7 +26,8 @@ class ${activityClass}Activity : BaseLoadListActivity<Objects>() {
   private lateinit var loadListHelper: BaseLoadListHelper<Objects>
 
   override fun initViewsAndEvents(savedInstanceState: Bundle?) {
-    super.initViewsAndEvents(savedInstanceState)
+    super.initViewsAndEvents(savedInstanceState) 
+    title = "$activityClass"
     loadListHelper = object : BaseLoadListHelper<Objects>(this, this) {
       override fun load(): Observable<out Collection<Objects>> {
         return TODO()

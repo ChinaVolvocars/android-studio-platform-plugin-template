@@ -2,6 +2,7 @@ package other.BaseLoadListActivity
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
+import other.SourceLanguage
 import other.toSnakeCase
 
 val baseLoadListActivityTemplate
@@ -13,10 +14,10 @@ val baseLoadListActivityTemplate
     category = Category.Activity
     formFactor = FormFactor.Mobile
     screens = listOf(
-        WizardUiContext.ActivityGallery,
-        WizardUiContext.MenuEntry,
-        WizardUiContext.NewProject,
-        WizardUiContext.NewModule
+      WizardUiContext.ActivityGallery,
+      WizardUiContext.MenuEntry,
+      WizardUiContext.NewProject,
+      WizardUiContext.NewModule
     )
 
     lateinit var layoutName: StringParameter
@@ -38,18 +39,25 @@ val baseLoadListActivityTemplate
 
     val packageName = defaultPackageNameParameter
 
+    val sourceLanguage = enumParameter<SourceLanguage> {
+      name = "Source Language"
+      default = SourceLanguage.Kotlin
+    }
+
     widgets(
-        TextFieldWidget(activityClass),
-        TextFieldWidget(layoutName),
-        PackageNameWidget(packageName)
+      TextFieldWidget(activityClass),
+      TextFieldWidget(layoutName),
+      PackageNameWidget(packageName),
+      EnumWidget(sourceLanguage)
     )
 //        thumb { File("logo.png") }
     recipe = { data: TemplateData ->
       baseLoadListActivityRecipe(
-          data as ModuleTemplateData,
-          activityClass.value,
-          layoutName.value,
-          packageName.value
+        data as ModuleTemplateData,
+        activityClass.value,
+        layoutName.value,
+        packageName.value,
+        sourceLanguage.value
       )
     }
   }
