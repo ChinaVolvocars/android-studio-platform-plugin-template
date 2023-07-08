@@ -1,6 +1,6 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.chinavolvocars.androidstudioplatformplugintemplate</id>
+    <id>com.github.chinavolvocars.android.studio.platform.plugin</id>
     <name>996 Code Helper</name>
     <vendor>atlantis</vendor>
 
@@ -11,19 +11,19 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService
-                serviceImplementation="com.github.chinavolvocars.androidstudioplatformplugintemplate.services.MyApplicationService"/>
+                serviceImplementation="com.github.chinavolvocars.android.studio.platform.plugin.services.MyApplicationService"/>
         <projectService
-                serviceImplementation="com.github.chinavolvocars.androidstudioplatformplugintemplate.services.MyProjectService"/>
+                serviceImplementation="com.github.chinavolvocars.android.studio.platform.plugin.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
         <listener
-                class="com.github.chinavolvocars.androidstudioplatformplugintemplate.listeners.MyProjectManagerListener"
+                class="com.github.chinavolvocars.android.studio.platform.plugin.listeners.MyProjectManagerListener"
                 topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 
     <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
-        <wizardTemplateProvider implementation="other.SamplePluginTemplateProviderImpl"/>
+        <wizardTemplateProvider implementation="com.github.chinavolvocars.android.studio.platform.plugin.template.SamplePluginTemplateProviderImpl"/>
     </extensions>
 
 </idea-plugin>
