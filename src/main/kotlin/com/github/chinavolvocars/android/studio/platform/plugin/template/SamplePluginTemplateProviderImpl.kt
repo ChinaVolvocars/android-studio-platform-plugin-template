@@ -7,9 +7,9 @@ import com.github.chinavolvocars.android.studio.platform.plugin.template.base.ac
 import com.github.chinavolvocars.android.studio.platform.plugin.template.base.activity.load.list.more.baseLoadMoreActivityTemplate
 import com.github.chinavolvocars.android.studio.platform.plugin.template.base.activity.load.list.refresh.baseLoadListActivityTemplate
 import com.github.chinavolvocars.android.studio.platform.plugin.template.base.fragment.baseFragmentTemplate
+import com.github.chinavolvocars.android.studio.platform.plugin.template.base.fragment.load.list.baseListFragmentTemplate
 import com.github.chinavolvocars.android.studio.platform.plugin.template.base.fragment.load.list.more.baseLoadMoreFragmentTemplate
 import com.github.chinavolvocars.android.studio.platform.plugin.template.base.fragment.load.list.refresh.baseLoadListFragmentTemplate
-import com.github.chinavolvocars.android.studio.platform.plugin.template.activity.mvvmActivityTemplate
 
 class SamplePluginTemplateProviderImpl : WizardTemplateProvider() {
 
@@ -19,6 +19,7 @@ class SamplePluginTemplateProviderImpl : WizardTemplateProvider() {
     baseLoadListActivityTemplate,
     baseLoadMoreActivityTemplate,
     baseFragmentTemplate,
+    baseListFragmentTemplate,
     baseLoadListFragmentTemplate,
     baseLoadMoreFragmentTemplate,
   )
